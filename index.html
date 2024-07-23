@@ -3,13 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Red Rose</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Red Rose</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .rose {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+        .rose::before, .rose::after {
+            content: '';
+            position: absolute;
+            background-color: red;
+            border-radius: 50%;
+        }
+        .rose::before {
+            width: 100px;
+            height: 100px;
+            top: 0;
+            left: 0;
+            box-shadow: 20px 0px 0 0 red, -20px 0px 0 0 red, 
+                        0 20px 0 0 red, 0 -20px 0 0 red, 
+                        14px 14px 0 0 red, -14px -14px 0 0 red, 
+                        -14px 14px 0 0 red, 14px -14px 0 0 red;
+        }
+        .rose::after {
+            width: 60px;
+            height: 60px;
+            top: 20px;
+            left: 20px;
+            box-shadow: 10px 10px 0 0 red, -10px -10px 0 0 red, 
+                        -10px 10px 0 0 red, 10px -10px 0 0 red;
+        }
+        .stem {
+            position: absolute;
+            bottom: -150px;
+            left: 40px;
+            width: 20px;
+            height: 150px;
+            background-color: green;
+            border-radius: 10px;
+        }
+        .leaf {
+            position: absolute;
+            width: 60px;
+            height: 20px;
+            background-color: green;
+            border-radius: 20px;
+        }
+        .leaf.left {
+            top: 50px;
+            left: -40px;
+            transform: rotate(-30deg);
+        }
+        .leaf.right {
+            top: 80px;
+            right: -40px;
+            transform: rotate(30deg);
+        }
+    </style>
 </head>
 <body>
     <div class="rose">
-        <div class="petal"></div>
         <div class="stem"></div>
+        <div class="leaf left"></div>
+        <div class="leaf right"></div>
     </div>
 </body>
 </html>
