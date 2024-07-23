@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #fff;
+    margin: 0;
+}
+
+.rose {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    animation: spin 10s linear infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid red;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 0 solid transparent;
+    transform: rotate(45deg);
+    animation: bloom 2s infinite alternate;
+}
+
+.stem {
+    position: absolute;
+    width: 10px;
+    height: 150px;
+    background-color: green;
+    bottom: -50px;
+    left: 45px;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes bloom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
